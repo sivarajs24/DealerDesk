@@ -1,6 +1,6 @@
 # VIKMO DealerDesk — AI / ML Track
 
-Track: `aiml`
+Track: `aiml (AI / ML)`
 
 ---
 
@@ -9,10 +9,10 @@ Track: `aiml`
 DealerDesk is an ordering, inventory, demand forecasting, and conversational assistant backend designed for automotive and motorcycle parts distribution.
 
 ### Built Components
-- **Core Backend (§4, §5, §6, §7.1)**: Relational schema in PostgreSQL with Product catalogue, Inventory, Dealer profiles, and Draft Order lifecycle.
-- **Order Engine (§7.2–§7.5)**: Status transitions, concurrency-safe stock deduction using row-level locking (`select_for_update`), cancellation stock restoration, exact 18% GST rounded `ROUND_HALF_UP` to the paisa, and duplicate-safe idempotency.
-- **Dealer Assistant (§9)**: Conversational assistant using Google Gemini with live PostgreSQL grounding, tool calling (`search_parts`, `check_stock`, `create_draft_order`), multi-turn session persistence, and untrusted catalogue text guardrails.
-- **Forecasting & Reorder (§10)**: 4-week demand forecast across 40 SKUs using LightGBM Tweedie count regression, beating historical baselines by 20.68%. Safety stock and reorder points served live via `GET /api/reorder-suggestions/`.
+- **Core Backend**: Relational schema in PostgreSQL with Product catalogue, Inventory, Dealer profiles, and Draft Order lifecycle.
+- **Order Engine**: Status transitions, concurrency-safe stock deduction using row-level locking (`select_for_update`), cancellation stock restoration, exact 18% GST rounded `ROUND_HALF_UP` to the paisa, and duplicate-safe idempotency.
+- **Dealer Assistant**: Conversational assistant using Google Gemini with live PostgreSQL grounding, tool calling (`search_parts`, `check_stock`, `create_draft_order`), multi-turn session persistence, and untrusted catalogue text guardrails.
+- **Forecasting & Reorder**: 4-week demand forecast across 40 SKUs using LightGBM Tweedie count regression, beating historical baselines by 20.68%. Safety stock and reorder points served live via `GET /api/reorder-suggestions/`.
 
 ---
 
