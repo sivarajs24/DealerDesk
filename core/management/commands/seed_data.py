@@ -96,7 +96,12 @@ class Command(BaseCommand):
                 )
 
         self.stdout.write(self.style.NOTICE("Executing atomic bulk upsert for dealers..."))
+        seeded_codes = [d.dealer_code for d in dealers]
         with transaction.atomic():
+            from core.models import Order
+            Order.objects.exclude(dealer__dealer_code__in=seeded_codes).delete()
+            Dealer.objects.exclude(dealer_code__in=seeded_codes).delete()
+
             Dealer.objects.bulk_create(
                 dealers,
                 update_conflicts=True,

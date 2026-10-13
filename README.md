@@ -1,7 +1,6 @@
 # VIKMO DealerDesk — AI / ML Track
 
-Track: `aiml`  
-Video Walkthrough: [Video Link](https://youtu.be/placeholder)
+Track: `aiml`
 
 ---
 
@@ -69,6 +68,8 @@ python manage.py test
 
 ### ML Forecasting
 The forecasting pipeline and analysis are documented in `ml/forecasting.ipynb`. Final predictions are committed in `ml/forecast.csv` (160 rows).
+- **Two-Stage Hurdle Intermittent Demand Model**: Stage 1 occurrence classifier $P(Y_t > 0)$ + Stage 2 conditional quantity regressor for sparse SKUs.
+- **Hierarchical Demand Reconciliation**: Proportional regularized reconciliation aligning SKU bottom-up forecasts with macro category momentum.
 
 ---
 
